@@ -1,0 +1,170 @@
+@madia screen(min-width:1000px){
+    .container{
+    display:flex;
+    align-items:center;
+    -webkit-flex-direction: column;
+  }
+}
+
+body{
+    background-color:#1e3846;
+    color:white;
+}
+
+#RT{
+    color:#ffcc00
+}
+footer{
+    text-align:center;
+}
+#inputG{
+    background-color:#14262f;
+}
+input{
+    background-color:white;
+    color:black;
+    margin:1%;
+}
+
+.btn-rad {
+  padding: 7px 20px;
+  margin: 1% ;
+  border-radius: 30px;
+  color: #14262f;
+  background-color: #ffcc00;
+  font-weight: bold;
+}
+
+.btn-rad:hover {
+  background-color:#c9a206;
+}
+
+a:link{
+  color:yellow;
+  text-decoration:underline;
+}
+
+a:visited{
+  color:#b39800;
+}
+
+span.send{
+  border: 1px solid #ccc;
+  background-color:yellow;
+  color:Black;
+}
+
+.gform{
+  //font-size: 25px;
+}
+
+textarea{
+  background-color:white;
+}
+
+.tab-button {
+  padding: 6px 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color:#1e3846;
+  color:white;
+  margin-bottom: -1px;
+  margin-right: -1px;
+}
+.tab-button:hover {
+     background-color:#14262f;
+}
+.tab-button.active {
+  border-bottom:2px solid #ffcc00;
+  padding-bottom:5px;
+  display:inline;
+  line-height:2;
+}
+
+/*
+acordion
+*/
+#accordion{
+  margin:0 auto;
+}
+.js-accordion{
+  border-style: solid;
+  border-width:1px 1px 0 1px;
+  border-radius: 2px;
+}
+  .js-accordion:last-child{
+    border-bottom-width:1px;
+  }
+  .js-accordion--trigger{
+    position: relative;
+    display: block;
+    width: 100%;
+    transition: all 0.2s ease-in;
+    display: block;
+    font-size:20px;
+    font-weight: bold;
+    text-align: left;
+    padding: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+.js-accordion:after{
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: solid transparent;
+      border-top-color: #5f6569;
+      border-width: 7px;
+      position: absolute;
+      top: 50%;
+      right: 1em;
+      margin-top: -5px;
+      transition: all 0.2s ease-in;
+    }
+.js-accordion._state-open{
+      text-decoration: none;
+}
+/* .js-accordion:after{
+        transform:rotateX(180deg);
+        margin-top: -10px;
+} */
+
+.js-accordion--target{
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+  }
+.js-accordion--body{ 
+    padding: 30px;
+  }
+/* .js-accordion-enter-active{
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: js-accordion--anime__opend;
+  }
+.js-accordion-leave-active{
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: js-accordion--anime__closed;
+  } */
+
+
+@keyframes js-accordion--anime__opend {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+   }
+}
+@keyframes js-accordion--anime__closed {
+  0% {
+   opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
