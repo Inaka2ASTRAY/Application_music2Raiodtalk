@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue@3.2.31"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container"> 
+      <h1 id="RT">Radiotalk©️楽曲利用申請フォーム生成(NexTone版β)</h1> 
+      <div id="accordion">
+        <js-accordion></js-accordion>
+      </div>
+      <div id="dynamic-tab">
+        <button
+          v-for="tab in tabs"
+          :key="tab"
+          :class="['tab-button', { active: currentTab === tab }]"
+          @click="currentTab = tab"
+        >
+        {{ tab }}
+        </button>
+        <component :is="currentTabComponent" class="tab"></component>
+      </div>
+      <div id="files">
+        <label id="import_csv">
+          <input type="file" @change="loadCsvFile">
+        </label>
+        <p>{{message}}</p>
+        <table border="1">
+          <tr><th>作品名</th><th>作詞者名</th><th>作曲者名</th><th>アーティスト名</th><th>NexTone作品コード</th></tr>
+          <tr v-for="(worker, index) in workers" :key="index">
+            <td v-for="(column, index) in worker" :key="index">{{ column }}</td>
+          </tr>
+        </table>
+      </div>
+      <h2>楽曲のタイトルごとに申請フォームを生成</h2>
+      <ol id="request"></ol>
+    </div>
+    <script src="./tabjs.js"></script>
+    <script src="./music.js"></script>
+  </body>
+</html>
